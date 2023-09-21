@@ -46,12 +46,12 @@ namespace Robots_inc
         public List<Worker> sixWorkers()
         {
             List<Worker> list = new List<Worker>();
-            list.Add(new OperationalWorker(48, 30, "noya", "123", DateTime.Parse("1.1.2002"), "123"));
+            list.Add(new OperationalWorker(48, 30, "noya", "123", DateTime.Parse("21.9.2002"), "123"));
             list.Add(new OperationalWorker(43, 24, "or", "45587215641", DateTime.Parse("1.1.2002"), "2145124545"));
             list.Add(new OperationalWorker(21, 30, "nehorai", "45587215641", DateTime.Parse("1.1.2002"), "2145124545"));
             list.Add(new OperationManager(12, 5, 26, "eytan", "231", DateTime.Parse("1.1.2002"), "231"));
             list.Add(new OperationManager(11, 3, 23, "rif", "214850687", DateTime.Parse("1.1.2002"), "212121"));
-            list.Add(new GeneralManager("rotem", "456", DateTime.Parse("1.1.2002"), "456", 6000.0, 45));
+            list.Add(new GeneralManager("rotem", "456", DateTime.Today, "456", 6000.0, 45));
             return list;
 
         }
@@ -93,7 +93,7 @@ namespace Robots_inc
             string psword = tbxPassword.Password;
             foreach (Worker worker in workers)
             {
-                if (id.Equals(worker.GetidNumber()) && psword.Equals(worker.Password))
+                if (id.Equals(worker.IdNumber()) && psword.Equals(worker.Password))
                 {
                     WndMain main = new WndMain(worker, activeMissions, activeRobots, workers);
                     main.ShowDialog();

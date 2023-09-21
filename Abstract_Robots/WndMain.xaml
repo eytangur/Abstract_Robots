@@ -17,36 +17,38 @@
         </Style>
     </Window.Resources>
     <DockPanel>
-            <Menu DockPanel.Dock="Top" x:Name="mnMain">
-                <Menu.Background>
-                    <SolidColorBrush Color="Black"/>
-                </Menu.Background>
-                <Menu.Resources>
-                    <Style TargetType="MenuItem">
-                        <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="FontSize" Value="20"/>
-                    </Style>
-                </Menu.Resources>
-                <MenuItem Header="Robots" x:Name="mnRobots">
-                    <MenuItem Header="Add New RoBoT" />
-                    <MenuItem Header="View All Robots"/>
-                </MenuItem>
+        <Menu DockPanel.Dock="Top" x:Name="mnMain">
+            <Menu.Background>
+                <SolidColorBrush Color="Black"/>
+            </Menu.Background>
+            <Menu.Resources>
+                <Style TargetType="MenuItem">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="20"/>
+                </Style>
+            </Menu.Resources>
+            <MenuItem Header="Robots" x:Name="mnRobots">
+                <MenuItem Header="Add New RoBoT" />
+                <MenuItem Header="View All Robots"/>
+
+            </MenuItem>
             <MenuItem Header="Workers"  x:Name="mnWorkers">
-                    <MenuItem Header="Add new Worker"/>
-                    <MenuItem Header="View all workers"/>
-                </MenuItem>
+                <MenuItem Header="Add new Worker"/>
+                <MenuItem Header="View all workers" Click="ViewWorker_Click"/>
+
+            </MenuItem>
             <MenuItem Header="Missions" x:Name="mnMissions">
-                    <MenuItem Header="Add new mission"/>
-                    <MenuItem Header="View all"/>
-                </MenuItem>
+                <MenuItem Header="Add new mission"/>
+                <MenuItem Header="View all"/>
+            </MenuItem>
             <MenuItem Header="Exit"/>
         </Menu>
-        
+
         <StackPanel Orientation="Vertical">
             <TextBlock x:Name="tbHeader" Grid.Row="0" Grid.ColumnSpan="4"
                    Text="Worker name + type" Style="{StaticResource tbHeader}"/>
-        <StackPanel x:Name="workPanel" Grid.Row="2"/>
+            <WrapPanel x:Name="workPanel" Grid.Row="2"/>
 
-    </StackPanel>
+        </StackPanel>
     </DockPanel>
 </Window>

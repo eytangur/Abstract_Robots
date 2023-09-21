@@ -24,8 +24,8 @@ namespace Robots_inc
         public string Password { get { return password; } set { password = value; } }
         public string FullName { get { return fullName; } }
 
-        public string GetidNumber() { return this.idNumber; }
-        public DateTime GetBirthDate() { return this.birthDate; }
+        public string IdNumber() { return this.idNumber; }
+        public DateTime BirthDate() { return this.birthDate; }
 
         public abstract double Salary();
 
